@@ -1,6 +1,7 @@
 import React from 'react'
 import { fetchData, getOptions } from '../utils/fatchData';
 import { useEffect } from 'react';
+import Header from '../components/Header';
 
 const SearchList = () => {
     useEffect(() => {
@@ -12,7 +13,9 @@ const SearchList = () => {
     }, []);
     
   return (
-    <div>SearchList</div>
+    <div>
+        <Header />
+    </div>
   )
 }
 
