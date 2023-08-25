@@ -1,33 +1,41 @@
-import React from 'react'
-// import { styled } from 'styled-components';
-import mainlogo from '../assets/logo.png';
-import menuicon from '../assets/menu-icon.png';
-import {NavList} from '../styles/HeaderStyle';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RiMenu3Line } from 'react-icons/ri';
 
+import Logo from '../assets/logo.png';
 
-
+import { HeaderSection } from '../styles/Header.styled';
+import Container from '../styles/Container.styled';
 
 const Header = () => {
   return (
-    <div>
-        <NavList>
-            <ul className='navi'>
-                <li>   
-                    <Link to='/'><img className="logo" src={mainlogo} alt=''/></Link>
-                </li>
-                <li>
-                    <a>로그인</a>
-                    <a>위시리스트</a>
-                    {/* <Link to='/search-lists'>Search Lists</Link> */}
-                    <a><img className="menu-icon" src={menuicon} alt=''/></a>
-                </li>
-            </ul>
-        </NavList>
-        
-    </div>
-    
-  )
-}
+    <HeaderSection id='header'>
+      <Container className='header-wrapper'>
+        <div className='logo'>
+          <img src={Logo} alt='logo' />
+        </div>
+        <ul className='navi'>
+          <li>
+            <Link to='/'>홈</Link>
+          </li>
+          <li>
+            <Link to='/wish-lists'>위시 리스트</Link>
+          </li>
+          <li>
+            <Link to='/signin'>로그인</Link>
+          </li>
+          <li>
+            <Link to='/signup'>회원가입</Link>
+          </li>
+        </ul>
+        <div className='menu-icon'>
+          <button>
+            <RiMenu3Line />
+          </button>
+        </div>
+      </Container>
+    </HeaderSection>
+  );
+};
 
-export default Header
+export default Header;
